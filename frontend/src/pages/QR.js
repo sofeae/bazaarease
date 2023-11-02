@@ -1,14 +1,26 @@
 // QRCodePage.js
 import React from 'react';
 import QRCode from 'qrcode.react';
+import { useAuthContext } from '../hooks/useAuthContext'
 
-const QRCodePage = ({ businessName, userData }) => {
+const QR = () => {
+
+  const { user } = useAuthContext()
+  const qrCodeSize = 256; // Adjust the size as needed
+
+  const handlePrint = () => {
+    window.print(); // Open the print dialog
+  };
+
   return (
     <div>
-      <h1>hai</h1>
-      <QRCode value={JSON.stringify(userData)} />
+      <h1>{user.email}</h1>
+      <div>
+        <QRCode value={JSON.stringify(user)} size={qrCodeSize} />
+      </div>
+      <button onClick={handlePrint}>Print QR Code</button>
     </div>
   );
 };
 
-export default QRCodePage;
+export default QR;

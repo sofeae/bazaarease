@@ -6,7 +6,7 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import MenuDetails from '../components/MenuDetails'
 import MenuForm from '../components/MenuForm'
 
-const Home = () => {
+const Menu = () => {
   const {menus, dispatch} = useMenusContext()
   const {user} = useAuthContext()
 
@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <div>
     
-    <div className="home">
+    <div className="menu">
       <div className="menus">
         {menus && menus.map((menu) => (
           <MenuDetails key={menu._id} menu={menu} />
@@ -42,4 +42,4 @@ const Home = () => {
   )
 }
 
-export default Home  
+export default Menu  

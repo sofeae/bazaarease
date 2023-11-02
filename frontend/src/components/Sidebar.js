@@ -10,8 +10,10 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 function Sidebar() {
   const sidebarStyle = {
+    //position: 'fixed', // Set the position to fixed
     width: '220px', // Adjust the width as needed
     backgroundColor: 'white', // Set the background color to white
+    height: '100%', // Cover the full height of the viewport
   };
 
   const listItemStyle = {
@@ -25,23 +27,23 @@ function Sidebar() {
 
   return (
     <List sx={sidebarStyle}>
-      <ListItem button component={Link} to="/menu" style={listItemStyle}>
-        <RestaurantIcon style={iconStyle} /> {/* Add the icon component here */}
+      <ListItem button component={Link} to="/" style={listItemStyle}>
+        <RestaurantIcon style={iconStyle} />
         <ListItemText primary="Menu" />
       </ListItem>
       
       <ListItem button component={Link} to="/order" style={listItemStyle}>
-        <BorderColorIcon style={iconStyle} /> {/* Add the icon component here */}
+        <BorderColorIcon style={iconStyle} />
         <ListItemText primary="Order" />
       </ListItem>
       
-      <ListItem button component={Link} to="./pages/QR" style={listItemStyle}>
-        <QrCodeIcon style={iconStyle} /> {/* Add the icon component here */}
-        <ListItemText primary="QR Code" />
+      <ListItem button component={Link} to="/QR" style={listItemStyle}>
+        <QrCodeIcon style={iconStyle} />
+        <ListItemText primary="QR" />
       </ListItem>
       
       <ListItem button component={Link} to="/sales" style={listItemStyle}>
-        <AttachMoneyIcon style={iconStyle} /> {/* Add the icon component here */}
+        <AttachMoneyIcon style={iconStyle} />
         <ListItemText primary="Sales" />
       </ListItem>
       

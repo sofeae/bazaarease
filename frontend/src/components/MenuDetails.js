@@ -52,7 +52,7 @@ const MenuDetails = ({ menu }) => {
   };
 
   return (
-    <div className="workouts-details">
+    <div className="menus-details">
       <h4>{menu.name}</h4>
       <p><strong>Description: </strong>{menu.desc}</p>
       <p><strong>Price (in RM): </strong>{menu.price}</p>
@@ -71,4 +71,4 @@ const MenuDetails = ({ menu }) => {
   
   }  
   
-export default MenuDetails
+export default MenuDetails 
