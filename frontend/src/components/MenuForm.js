@@ -22,56 +22,48 @@ const MenuForm = () => {
     }
   };
 
-  const handleSubmit = () => {
-    
-    let formData = new FormData();
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+    const formData = new FormData();
     formData.append("name", name);
     formData.append("desc", desc);
     formData.append("price", price);
     formData.append("stock", stock);
     formData.append("image", image);
 
-    fetch("/api/menus", {
+    const response = await fetch("/api/menus", {
       method: "POST",
       body: formData,
       headers: {
         'Authorization': `Bearer ${user.token}`
       }
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
 
-      //Copy from old
-      let response; 
-      let json;
-      if (!response.ok) {
-        setError(json.error)
-        setEmptyFields(json.emptyFields)
-      }
-      if (response.ok) {
-        setName('')
-        setDesc('')
-        setPrice('')
-        setStock('')
-        setImage('')
-        setError(null)
-        setEmptyFields([])
-        dispatch({type: 'CREATE_MENU', payload: json})
-      }
-      //End from old
+    const json = await response.json()
+    if (!response.ok) {
+      setError(json.error)
+      setEmptyFields(json.emptyFields)
+    }
+    if (response.ok) {
+      setName('')
+      setDesc('')
+      setPrice('')
+      setStock('')
+      setImage('')
+      setError(null)
+      setEmptyFields([])
+      dispatch({ type: 'CREATE_MENUS', payload: json })
+    }
+    //End from old
   };
 
   return (
     <form className="create" onSubmit={handleSubmit}>
       <h3>Add a New Menu</h3>
- 
+
       <label>Menu Name:</label>
-      <input 
+      <input
         type="text"
         onChange={(e) => setName(e.target.value)}
         value={name}
@@ -79,7 +71,7 @@ const MenuForm = () => {
       />
 
       <label>Description:</label>
-      <input 
+      <input
         type="text"
         onChange={(e) => setDesc(e.target.value)}
         value={desc}
@@ -87,7 +79,7 @@ const MenuForm = () => {
       />
 
       <label>Price:</label>
-      <input 
+      <input
         type="number"
         onChange={(e) => setPrice(e.target.value)}
         value={price}
@@ -95,7 +87,7 @@ const MenuForm = () => {
       />
 
       <label>Stock:</label>
-      <input 
+      <input
         type="number"
         onChange={(e) => setStock(e.target.value)}
         value={stock}
@@ -103,11 +95,11 @@ const MenuForm = () => {
       />
 
       <label>Image:</label>
-      <input 
+      <input
         type="file"
         onChange={onImageChange}
         className={emptyFields.includes('image') ? 'error' : ''}
-      /> 
+      />
 
       <button>Add Menu</button>
       {error && <div className="error">{error}</div>}
