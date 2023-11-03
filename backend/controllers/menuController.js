@@ -29,6 +29,8 @@ const getMenu = async (req, res) => {
 
 // create new menu
 const createMenu = async (req, res) => {
+  console.log("Creating Menu")
+  console.log(req.body)
   const { name, desc, price, stock } = req.body
   const image = req.file.filename; 
 

@@ -25,7 +25,7 @@ const MenuDetails = ({ menu }) => {
     const json = await response.json()
 
     if (response.ok) {
-      dispatch({type: 'DELETE_MENU', payload: json})
+      dispatch({type: 'DELETE_MENUS', payload: json})
     }
   }
 
@@ -43,7 +43,7 @@ const MenuDetails = ({ menu }) => {
     const json = await response.json()
 
     if (response.ok) {
-      dispatch({type: 'UPDATE_MENU', payload: json})
+      dispatch({type: 'UPDATE_MENUS', payload: json})
     }
   }
 
