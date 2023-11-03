@@ -1,48 +1,49 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography'; // Import Typography component
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  height: 100,
-  width: 300,
-  lineHeight: '100px',
-}));
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
-const lightTheme = createTheme({ palette: { mode: 'light' } });
+export default function CustomizedSnackbars() {
+  const [open, setOpen] = React.useState(false);
 
-export default function Order() {
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  }
+
+
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12}> {/* Full width item for the text */}
-        <Typography variant="h5" align="center">Incoming Order</Typography>
-      </Grid>
-      {[lightTheme].map((theme, index) => (
-        <Grid item xs={6} key={index}>
-          <ThemeProvider theme={theme}>
-            <Box
-              sx={{
-                p: 2,
-                borderRadius: 2,
-                display: 'grid',
-                gridTemplateColumns: { md: '1fr 1fr' },
-                gap: 2,
-              }}
-            >
-              {[0, 1, 2, 3, 4, 6, 8, 12, 16, 24].map((order) => (
-                <Item key={order} order={order}>
-                  {`order=${order}`}
-                </Item>
-              ))}
-            </Box>
-          </ThemeProvider>
-        </Grid>
-      ))}
-    </Grid>
+    <Stack spacing={2} sx={{ width: '100%' }}>
+      <Button variant="outlined" onClick={handleClick}>
+        <span style={{ marginLeft: '8px', fontSize: '12px', color: 'gray' }}>
+          (Click to complete your order)
+        </span>
+        <BorderColorIcon />
+      </Button>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Order Completed!
+        </Alert>
+      </Snackbar>
+      
+      {/*<Alert severity="error">This is an error message!</Alert>
+      <Alert severity="warning">This is a warning message!</Alert>*/}
+      <Alert severity="info">This is an information message!</Alert>
+      {/*<Alert severity="success">This is a success message!</Alert>*/}
+
+    </Stack>
   );
 }
