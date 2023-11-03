@@ -2,19 +2,19 @@ import { createContext, useReducer } from 'react'
 
 export const MenusContext = createContext()
 
-export const workoutsReducer = (state, action) => {
+export const menusReducer = (state, action) => {
   switch (action.type) {
-    case 'SET_WORKOUTS': 
+    case 'SET_MENUS': 
       return {
-        workouts: action.payload
+        menus: action.payload
       }
-    case 'CREATE_WORKOUT':
+    case 'CREATE_MENUS':
       return {
-        workouts: [action.payload, ...state.workouts]
+        menus: [action.payload, ...state.menus]
       }
-    case 'DELETE_WORKOUT':
+    case 'DELETE_MENUS':
       return {
-        workouts: state.workouts.filter((w) => w._id !== action.payload._id)
+        menus: state.menus.filter((w) => w._id !== action.payload._id)
       }
     default:
       return state
@@ -22,8 +22,8 @@ export const workoutsReducer = (state, action) => {
 }
 
 export const MenusContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(workoutsReducer, {
-    workouts: null
+  const [state, dispatch] = useReducer(menusReducer, {
+    menus: null
   })
 
   return (
