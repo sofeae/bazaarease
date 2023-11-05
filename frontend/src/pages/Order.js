@@ -32,7 +32,7 @@ export default function CustomizedSnackbars() {
           (Click to complete your order)
         </span>
         <BorderColorIcon />
-      </Button>
+      </Button> 
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           Order Completed!

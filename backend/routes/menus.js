@@ -39,8 +39,8 @@ router.post('/', upload.single("image"), createMenu)
 // DELETE a menu
 router.delete('/:id', deleteMenu)
 
-// UPDATE a menu
-router.patch('/:id', updateMenu)
+// UPDATE a menu 
+router.patch('/:id', updateMenu) 
 
 
 module.exports = router

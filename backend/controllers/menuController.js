@@ -29,6 +29,8 @@ const getMenu = async (req, res) => {
 
 // create new menu
 const createMenu = async (req, res) => {
+  console.log("Creating Menu")
+  console.log(req.body)
   const { name, desc, price, stock } = req.body
   const image = req.file.filename; 
 
@@ -93,7 +95,7 @@ const updateMenu = async (req, res) => {
     return res.status(400).json({ error: 'No such menu' })
   }
 
-  res.status(200).json(menu)
+  res.status(200).json(menu) 
 }
 
 module.exports = {
