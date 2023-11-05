@@ -9,11 +9,14 @@ import QrCodeIcon from '@mui/icons-material/QrCode';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 function Sidebar() {
+  
   const sidebarStyle = {
     //position: 'fixed', // Set the position to fixed
+    //position: 'flex',
     width: '220px', // Adjust the width as needed
     backgroundColor: 'white', // Set the background color to white
     height: '100%', // Cover the full height of the viewport
+    left: '0',
   };
 
   const listItemStyle = {
@@ -32,7 +35,7 @@ function Sidebar() {
         <ListItemText primary="Menu" />
       </ListItem>
       
-      <ListItem button component={Link} to="/order" style={listItemStyle}>
+      <ListItem button component={Link} to="/Order" style={listItemStyle}>
         <BorderColorIcon style={iconStyle} />
         <ListItemText primary="Order" />
       </ListItem>
