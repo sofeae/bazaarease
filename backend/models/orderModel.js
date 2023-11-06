@@ -6,6 +6,9 @@ const orderSchema = new Schema({
   orderId: {
     type: String,
   },
+  queueId: {
+    type: Number
+  },
   date: {
     type: Date,
   },
