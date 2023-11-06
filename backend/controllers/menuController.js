@@ -4,10 +4,10 @@ const mongoose = require('mongoose')
 // get all menu
 const getMenus = async (req, res) => {
   const user_id = req.user._id
-
+ 
   const menus = await Menu.find({ user_id }).sort({ createdAt: -1 })
 
-  res.status(200).json(menus)
+  res.status(200).json(menus) 
 }
 
 // get a single menu

@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
-export default function Order() {
+export default function Order() { 
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}> {/* Full width item for the text */}
