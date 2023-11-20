@@ -12,11 +12,12 @@ function Sidebar() {
   
   const sidebarStyle = {
     //position: 'fixed', // Set the position to fixed
-    //position: 'flex',
-    width: '220px', // Adjust the width as needed
+    position: 'flex',
+    width: '230px', // Adjust the width as needed
     backgroundColor: 'white', // Set the background color to white
     height: '100%', // Cover the full height of the viewport
-    left: '0',
+    left: '20',
+    //right: '200'
   };
 
   const listItemStyle = {
@@ -45,7 +46,7 @@ function Sidebar() {
         <ListItemText primary="QR" />
       </ListItem>
       
-      <ListItem button component={Link} to="/sales" style={listItemStyle}>
+      <ListItem button component={Link} to="/Customer" style={listItemStyle}>
         <AttachMoneyIcon style={iconStyle} />
         <ListItemText primary="Sales" />
       </ListItem>

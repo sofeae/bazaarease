@@ -31,7 +31,8 @@ const getOrders = async (req, res) => {
   // customer create an order
   const createOrder = async (req, res) => {
   console.log("Creating Order")
-  console.log(req.body)
+  
+  
   const {queueId, name, quantity } = req.body
   //const image = req.file.filename;
 

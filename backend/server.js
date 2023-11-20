@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors');
 const menuRoutes = require('./routes/menus')
 const userRoutes = require('./routes/user')
+// const customerRoutes = require('./routes/customer')
 // const multer = require ('multer')
 
 // express app
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/menus', menuRoutes)
 app.use('/api/user', userRoutes)
+// app.use('/api/customer', customerRoutes)
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)

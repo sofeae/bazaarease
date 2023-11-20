@@ -30,6 +30,7 @@ const Menu = () => {
 
   return (
     <div className="menu-container">
+      
       <div style={{ display: 'flex' }}>
           <Sidebar className="sidebar" /> {/* Apply the "sidebar" class to the Sidebar */}
       <div className="menu">

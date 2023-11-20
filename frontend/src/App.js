@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
 import QR from './pages/QR';
 import Order from './pages/Order';
+import Sales from './pages/Customer';
 //import Sidebar from '../components/Sidebar';
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
               />
               <Route path="/Order" 
               element={user ? <Order /> : <Navigate to="/login" />}
+              />
+              <Route path="/Customer" 
+              element={user ? <Sales /> : <Navigate to="/login" />}
               />
             </Routes>
           </div>

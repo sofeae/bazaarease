@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
+
 import { useMenusContext } from '../hooks/useMenusContext';
 import { useAuthContext } from '../hooks/useAuthContext';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
@@ -9,27 +11,8 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 const MenuDetails = ({ menu }) => {
   const { dispatch } = useMenusContext();
   const { user } = useAuthContext();
-
-  // handle delete
-  const handleDelete = async () => {
-    if (!user) {
-      return;
-    }
-
-    const response = await fetch('/api/menus/' + menu._id, {
-      method: 'DELETE',
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
-    const json = await response.json();
-
-    if (response.ok) {
-      dispatch({ type: 'DELETE_MENUS', payload: json });
-    }
-  };
-
-  //handle edit
+  const navigate = useNavigate(); // Get the navigate function
+  
   const handleEdit = async () => {
     if (!user) {
       return;
@@ -45,6 +28,9 @@ const MenuDetails = ({ menu }) => {
 
     if (response.ok) {
       dispatch({ type: 'UPDATE_MENUS', payload: json });
+
+       // Redirect to the Cart page when the cart icon is clicked
+      navigate('/pages/Cart.js');
     }
   };
 
@@ -65,24 +51,15 @@ const MenuDetails = ({ menu }) => {
         {menu.price}
       </p>
       <p>
-        <strong>Stock: </strong>
-        {menu.stock}
-      </p>
-      <p>
-        <strong>Image: </strong>
-      </p>
-      <p>
         <img src={'http://localhost:4000/' + menu.image} height="100" width="150" alt="Menu" />
       </p>
       <p>{formatDistanceToNow(new Date(menu.createdAt), { addSuffix: true })}</p>
       <span>
-        {/* Edit icon */}
-        <EditIcon style={iconStyle} onClick={handleEdit} />
-        {/* Delete icon */}
-        <DeleteIcon style={iconStyle} onClick={handleDelete} />
+        {/* Cart icon */}
+        <ShoppingCartIcon style={iconStyle} onClick={handleEdit} />
       </span>
     </div>
   );
-};
+}; 
 
-export default MenuDetails;
+export default MenuDetails; 
