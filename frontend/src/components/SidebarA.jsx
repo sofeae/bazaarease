@@ -7,7 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 //import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+//import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 //import ProfilePicture from './ProfilePicture';
 //import { Link } from 'react-router-dom';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
@@ -25,14 +25,14 @@ export default function PermanentDrawerLeft() {
   ];
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'}}>
       <Drawer
         className="custom-drawer" 
         variant="permanent"
         anchor="left"
       >
 
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, marginTop: 15}}>
           <List>
             {items.map((item) => (
               <ListItem key={item.text} disablePadding>
@@ -48,10 +48,6 @@ export default function PermanentDrawerLeft() {
         <List>
           <ListItem disablePadding>
             <ListItemButton className="list-item">
-              <ListItemIcon>
-                <LogoutOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText primary="Logout" />
             </ListItemButton>
           </ListItem>
         </List>
