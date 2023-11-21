@@ -18,6 +18,7 @@ export default function PermanentDrawerLeft() {
     { text: 'Order', icon: <BorderColorIcon />, link: '/Order'},
     { text: 'QR Code', icon: <QrCodeIcon />, link: '/QR' },
     { text: 'Sales Management', icon: <AttachMoneyIcon />, link: '/Customer' },
+    { text: 'test editForm', icon: <AttachMoneyIcon />, link: '/EditForm' },
   ];
 
   return (

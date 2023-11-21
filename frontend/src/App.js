@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import QR from './pages/QR';
 import Order from './pages/Order';
 import Sales from './pages/Customer';
+import EditForm from './pages/EditForm';
 //import Sidebar from '../components/Sidebar';
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
               />
               <Route path="/Customer" 
               element={user ? <Sales /> : <Navigate to="/login" />}
+              />
+              <Route path="/EditForm" 
+              element={user ? <EditForm /> : <Navigate to="/login" />}
               />
             </Routes>
           </div>
