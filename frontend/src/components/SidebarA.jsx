@@ -6,21 +6,22 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
-import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
-import EditCalendarOutlinedIcon from '@mui/icons-material/EditCalendarOutlined';
-import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
+//import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
-import ProfilePicture from './ProfilePicture';
+//import ProfilePicture from './ProfilePicture';
+//import { Link } from 'react-router-dom';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import QrCodeIcon from '@mui/icons-material/QrCode';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 export default function PermanentDrawerLeft() {
   const items = [
-    { text: 'Profile', icon: <PermIdentityOutlinedIcon /> },
-    { text: 'Dashboard', icon: <DashboardCustomizeOutlinedIcon /> },
-    { text: 'Academic Progress', icon: <ShowChartOutlinedIcon /> },
-    { text: 'Course Plan', icon: <EditCalendarOutlinedIcon /> },
-    { text: 'History', icon: <HistoryOutlinedIcon /> },
+    //{ text: 'Profile', icon: <PermIdentityOutlinedIcon /> },
+    { text: 'Menu', icon: <RestaurantIcon /> },
+    { text: 'Order', icon: <BorderColorIcon /> },
+    { text: 'QR Code', icon: <QrCodeIcon /> },
+    { text: 'Sales Management', icon: <AttachMoneyIcon /> },
   ];
 
   return (
@@ -30,11 +31,7 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <p className="welcomeText"> 
-          <strong>Welcome Back!</strong>
-        </p>
 
-        <ProfilePicture />
         <Box sx={{ flexGrow: 1 }}>
           <List>
             {items.map((item) => (
