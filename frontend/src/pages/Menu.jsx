@@ -5,7 +5,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 // components
 import MenuDetails from '../components/MenuDetails';
 import MenuForm from '../components/MenuForm';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/SidebarA';
 
 const Menu = () => {
   const { menus, dispatch } = useMenusContext();

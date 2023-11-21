@@ -3,6 +3,7 @@ import React from 'react';
 import QRCode from 'qrcode.react';
 import { useAuthContext } from '../hooks/useAuthContext'
 
+
 const QR = () => {
 
   const { user } = useAuthContext()

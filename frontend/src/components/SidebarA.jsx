@@ -6,10 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-//import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-//import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
-//import ProfilePicture from './ProfilePicture';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import QrCodeIcon from '@mui/icons-material/QrCode';
@@ -17,11 +14,10 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 export default function PermanentDrawerLeft() {
   const items = [
-    //{ text: 'Profile', icon: <PermIdentityOutlinedIcon /> },
-    { text: 'Menu', icon: <RestaurantIcon /> },
-    { text: 'Order', icon: <BorderColorIcon /> },
-    { text: 'QR Code', icon: <QrCodeIcon /> },
-    { text: 'Sales Management', icon: <AttachMoneyIcon /> },
+    { text: 'Menu', icon: <RestaurantIcon />, link: '/' },
+    { text: 'Order', icon: <BorderColorIcon />, link: '/Order'},
+    { text: 'QR Code', icon: <QrCodeIcon />, link: '/QR' },
+    { text: 'Sales Management', icon: <AttachMoneyIcon />, link: '/Customer' },
   ];
 
   return (
@@ -36,7 +32,7 @@ export default function PermanentDrawerLeft() {
           <List>
             {items.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton className="list-item">
+                <ListItemButton className="list-item" component={Link} to={item.link}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>

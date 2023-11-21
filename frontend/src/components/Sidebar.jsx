@@ -31,22 +31,22 @@ function Sidebar() {
 
   return (
     <List sx={sidebarStyle}>
-      <ListItem button component={Link} to="/" style={listItemStyle}>
+      <ListItem component={Link} to="/" style={listItemStyle}>
         <RestaurantIcon style={iconStyle} />
         <ListItemText primary="Menu" />
       </ListItem>
       
-      <ListItem button component={Link} to="/Order" style={listItemStyle}>
+      <ListItem component={Link} to="/Order" style={listItemStyle}>
         <BorderColorIcon style={iconStyle} />
         <ListItemText primary="Order" />
       </ListItem>
       
-      <ListItem button component={Link} to="/QR" style={listItemStyle}>
+      <ListItem component={Link} to="/QR" style={listItemStyle}>
         <QrCodeIcon style={iconStyle} />
         <ListItemText primary="QR" />
       </ListItem>
       
-      <ListItem button component={Link} to="/Customer" style={listItemStyle}>
+      <ListItem component={Link} to="/Customer" style={listItemStyle}>
         <AttachMoneyIcon style={iconStyle} />
         <ListItemText primary="Sales" />
       </ListItem>
