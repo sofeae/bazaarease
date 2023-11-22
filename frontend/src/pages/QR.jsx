@@ -2,7 +2,7 @@
 import React from 'react';
 import QRCode from 'qrcode.react';
 import { useAuthContext } from '../hooks/useAuthContext'
-
+import Sidebar from '../components/SidebarA';
 
 const QR = () => {
 
@@ -15,6 +15,7 @@ const QR = () => {
 
   return (
     <div>
+      <Sidebar />
       <h1>{user.email}</h1>
       <div>
         <QRCode value={JSON.stringify(user)} size={qrCodeSize} />

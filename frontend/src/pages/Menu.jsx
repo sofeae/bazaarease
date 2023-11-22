@@ -6,6 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import MenuDetails from '../components/MenuDetails';
 import MenuForm from '../components/MenuForm';
 import Sidebar from '../components/SidebarA';
+import Navbar from '../components/Navbar';
 
 const Menu = () => {
   const { menus, dispatch } = useMenusContext();
@@ -29,13 +30,14 @@ const Menu = () => {
   }, [dispatch, user]);
 
   return (
-    <div className="menu-container">
+    
+    <div> 
+    <Navbar />
       <div style={{ display: 'flex' }}>
-          <Sidebar className="sidebar" /> {/* Apply the "sidebar" class to the Sidebar */}
+          <Sidebar />
       <div className="menu">
         <div className="menus">
-          {menus &&
-            menus.map((menu) => (
+          {menus && menus.map((menu) => (
               <MenuDetails key={menu._id} menu={menu} />
             ))}
         </div>

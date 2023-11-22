@@ -1,13 +1,11 @@
 import React from "react";
 import Sidebar from "../components/SidebarA";
 import { Box } from "@mui/material";
-import Navbar from "../components/Navbar";
 
 
 function Order() {
   return (
     <div>
-      <Navbar />
       <Box sx={{ display: "flex" }}>
         <Sidebar />
       </Box>

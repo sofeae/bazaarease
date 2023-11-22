@@ -3,11 +3,13 @@ import { useAuthContext } from './hooks/useAuthContext';
 import Menu from './pages/Menu';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Navbar from './components/Navbar';
+//import Navbar from './components/Navbar';
 import QR from './pages/QR';
 import Order from './pages/Order';
 import Sales from './pages/Customer';
 import EditForm from './pages/EditForm';
+import Test from './pages/Test';
+//import Template from './pages/Template';
 //import Sidebar from '../components/Sidebar';
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        {/*<Navbar />*/}
         <div style={{ display: 'flex' }}>
           {/*<Sidebar className="sidebar" /> {/* Apply the "sidebar" class to the Sidebar */}
           <div className="pages">
@@ -45,6 +47,13 @@ function App() {
               <Route path="/EditForm" 
               element={user ? <EditForm /> : <Navigate to="/login" />}
               />
+              {/* <Route path="/Template" 
+              element={user ? <Template /> : <Navigate to="/login" />}
+              /> */}
+              <Route path="/Test" 
+              element={user ? <Test /> : <Navigate to="/login" />}
+              />
+
             </Routes>
           </div>
         </div>

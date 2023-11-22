@@ -1,17 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-
 import { useMenusContext } from '../hooks/useMenusContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-
-// date fns
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
-
 const MenuDetails = ({ menu }) => {
   const { dispatch } = useMenusContext();
   const { user } = useAuthContext();
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
   
   const handleEdit = async () => {
     if (!user) {
@@ -43,6 +38,9 @@ const MenuDetails = ({ menu }) => {
     <div className="menus-details">
       <h4>{menu.name}</h4>
       <p>
+        <img src={'http://localhost:4000/' + menu.image} height="220" width="353" alt="Menu" />
+      </p>
+      <p>
         <strong>Description: </strong>
         {menu.desc}
       </p>
@@ -50,12 +48,7 @@ const MenuDetails = ({ menu }) => {
         <strong>Price (in RM): </strong>
         {menu.price}
       </p>
-      <p>
-        <img src={'http://localhost:4000/' + menu.image} height="100" width="150" alt="Menu" />
-      </p>
-      <p>{formatDistanceToNow(new Date(menu.createdAt), { addSuffix: true })}</p>
       <span>
-        {/* Cart icon */}
         <ShoppingCartIcon style={iconStyle} onClick={handleEdit} />
       </span>
     </div>

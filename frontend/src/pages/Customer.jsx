@@ -3,9 +3,9 @@ import { useMenusContext } from '../hooks/useMenusContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 
 // components
-import MenuCustomer from '../components/MenuCustomer';
-//import MenuForm from '../components/MenuForm';
-import Sidebar from '../components/Sidebar';
+import CustMenuList from '../components/CustMenuList';
+import Sidebar from '../components/SidebarA';
+import Navbar from '../components/Navbar';
 
 const Menu = () => {
   const { menus, dispatch } = useMenusContext();
@@ -29,17 +29,19 @@ const Menu = () => {
   }, [dispatch, user]);
 
   return (
+    <div> 
+      <Navbar /> 
     <div className="menu-container">
       <div style={{ display: 'flex' }}>
-          <Sidebar className="sidebar" /> {/* Apply the "sidebar" class to the Sidebar */}
+          <Sidebar />
       <div className="menu">
-        <div className="menus">
-          {menus &&
-            menus.map((menu) => (
-              <MenuCustomer key={menu._id} menu={menu} />
+        
+          {menus.map((menu) => (
+              <CustMenuList key={menu._id} menu={menu} />
             ))}
-        </div>
+        
       </div>
+    </div>
     </div>
     </div>
   );
