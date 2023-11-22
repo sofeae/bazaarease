@@ -3,7 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext';
 import Menu from './pages/Menu';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-//import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import QR from './pages/QR';
 import Order from './pages/Order';
 import Sales from './pages/Customer';
