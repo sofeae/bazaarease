@@ -3,11 +3,13 @@ import { useAuthContext } from './hooks/useAuthContext';
 import Menu from './pages/Menu';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-//import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import QR from './pages/QR';
 import Order from './pages/Order';
 import Sales from './pages/Customer';
 import EditForm from './pages/EditForm';
+import HomeLayout from './layouts/HomeLayout';
+import RootLayout from './layouts/RootLayout'
 import Test from './pages/Test';
 //import Template from './pages/Template';
 //import Sidebar from '../components/Sidebar';
@@ -18,48 +20,63 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/*<Navbar />*/}
-        <div style={{ display: 'flex' }}>
-          {/*<Sidebar className="sidebar" /> {/* Apply the "sidebar" class to the Sidebar */}
-          <div className="pages">
-            <Routes>
-              <Route
-                path="/login"
-                element={!user ? <Login /> : <Navigate to="/" />}
-              />
-              <Route
-                path="/signup"
-                element={!user ? <Signup /> : <Navigate to="/" />}
-              />
-              <Route
-                path="/"
-                element={user ? <Menu /> : <Navigate to="/login" />}
-              />
-              <Route path="/QR" 
-              element={user ? <QR /> : <Navigate to="/login" />} 
-              />
-              <Route path="/Order" 
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />}></Route>
+          <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />}></Route>
+          <Route path="/" element={user ? <HomeLayout /> : <Navigate to="/login" />}>
+            <Route index element={user ? <Menu /> : <Navigate to="/login" />}></Route>
+            <Route path="QR"
+              element={user ? <QR /> : <Navigate to="/login" />}
+            />
+            <Route path="Order"
               element={user ? <Order /> : <Navigate to="/login" />}
-              />
-              <Route path="/Customer" 
-              element={user ? <Sales /> : <Navigate to="/login" />}
-              />
-              <Route path="/EditForm" 
-              element={user ? <EditForm /> : <Navigate to="/login" />}
-              />
-              {/* <Route path="/Template" 
-              element={user ? <Template /> : <Navigate to="/login" />}
-              /> */}
-              <Route path="/Test" 
-              element={user ? <Test /> : <Navigate to="/login" />}
-              />
+            />
 
-            </Routes>
-          </div>
-        </div>
+            <Route path="EditForm"
+              element={user ? <EditForm /> : <Navigate to="/login" />} />
+            <Route path="Customer"
+              element={user ? <Sales /> : <Navigate to="/login" />}
+            />
+          </Route>
+
+        </Routes>
       </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+{/* <Routes>
+              <Route path="/" element={!user ? <Login /> : <Navigate to="/" />}>
+                <Route
+                  path="login"
+                  element={!user ? <Login /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="signup"
+                  element={!user ? <Signup /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/"
+                  element={user ? <HomeLayout /> : <Navigate to="/login" />}
+                >
+                  <Route index element={<Menu />} />
+                  <Route path="QR"
+                    element={user ? <QR /> : <Navigate to="/login" />}
+                  />
+                  <Route path="Order"
+                    element={user ? <Order /> : <Navigate to="/login" />}
+                  />
+
+                  <Route path="EditForm"
+                    element={user ? <EditForm /> : <Navigate to="/login" />} />
+                </Route>
+
+                <Route path="Customer"
+                  element={user ? <Sales /> : <Navigate to="/login" />}
+                />
+              </Route>
+
+            </Routes> */}
