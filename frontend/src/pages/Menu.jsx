@@ -32,8 +32,6 @@ const Menu = () => {
   return (
     <>
     <div>
-      <Navbar />
-      <Sidebar />
     </div>
     <div className="menu-container">
       <div className="menu">
