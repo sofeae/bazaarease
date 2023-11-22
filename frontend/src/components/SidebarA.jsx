@@ -10,7 +10,7 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import QrCodeIcon from '@mui/icons-material/QrCode';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import "../index.css"
+import { Drawer } from '@mui/material';
 
 export default function PermanentDrawerLeft() {
   const items = [
@@ -20,27 +20,21 @@ export default function PermanentDrawerLeft() {
     { text: 'Sales Management', icon: <AttachMoneyIcon />, link: '/Customer' },
     { text: 'test editForm', icon: <AttachMoneyIcon />, link: '/EditForm' },
   ];
+const drawerWidth = 240;
 
   return (
-    <div className='sidebar'>
-          <List>
-            {items.map((item) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton className="list-item" component={Link} to={item.link}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-      {/* <Box sx={{ display: 'flex' }}>
-        <Drawer
-          className="custom-drawer"
-          variant="permanent"
-          anchor="left"
-        >
+    // <div className='sidebar'>
+      <Box sx={{ display: 'flex' }}>
+      <Drawer
+        variant="permanent"
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+        }}
+      >
 
-          <Box sx={{ flexGrow: 1, marginTop: 15 }}>
+          <Box sx={{ flexGrow: 1, marginTop: "30%" }}>
             <List>
               {items.map((item) => (
                 <ListItem key={item.text} disablePadding>
@@ -61,7 +55,7 @@ export default function PermanentDrawerLeft() {
           </List>
         </Drawer>
 
-      </Box> */}
-    </div>
+      </Box>
+    // </div>
   );
 }
