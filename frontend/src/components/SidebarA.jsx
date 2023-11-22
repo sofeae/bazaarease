@@ -11,6 +11,7 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import QrCodeIcon from '@mui/icons-material/QrCode';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+//import SystemLogo from 'https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg';
 
 export default function PermanentDrawerLeft() {
   const items = [
@@ -29,12 +30,12 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-
         <Box sx={{ flexGrow: 1, marginTop: 15}}>
           <List>
             {items.map((item) => (
               <ListItem key={item.text} disablePadding>
                 <ListItemButton className="list-item" component={Link} to={item.link}>
+                {/* <img src={SystemLogo} alt="System Logo" style={{ width: '100%', height: 'auto' }} /> */}
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>

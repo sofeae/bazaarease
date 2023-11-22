@@ -67,10 +67,10 @@ const MenuDetails = ({ menu }) => {
         <strong>Price (in RM): </strong>
         {menu.price}
       </p>
-      <p>
+      {/* <p>
         <strong>Stock: </strong>
         {menu.stock}
-      </p>
+      </p> */}
       {/* <p>
         <strong>Image: </strong>
       </p> */}

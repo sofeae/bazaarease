@@ -9,7 +9,7 @@ const MenuForm = () => {
   const [name, setName] = useState('')
   const [desc, setDesc] = useState('')
   const [price, setPrice] = useState('')
-  const [stock, setStock] = useState('')
+  //const [stock, setStock] = useState('')
   const [image, setImage] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
@@ -29,7 +29,7 @@ const MenuForm = () => {
     formData.append("name", name);
     formData.append("desc", desc);
     formData.append("price", price);
-    formData.append("stock", stock);
+    //formData.append("stock", stock);
     formData.append("image", image);
 
     const response = await fetch("/api/menus", {
@@ -49,7 +49,7 @@ const MenuForm = () => {
       setName('')
       setDesc('')
       setPrice('')
-      setStock('')
+      //setStock('')
       setImage('')
       setError(null)
       setEmptyFields([])
@@ -86,13 +86,13 @@ const MenuForm = () => {
         className={emptyFields.includes('price') ? 'error' : ''}
       />
 
-      <label>Stock:</label>
+      {/* <label>Stock:</label>
       <input
         type="number"
         onChange={(e) => setStock(e.target.value)}
         value={stock}
         className={emptyFields.includes('stock') ? 'error' : ''}
-      />
+      /> */}
 
       <label>Image:</label>
       <input
