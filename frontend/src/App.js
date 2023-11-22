@@ -3,14 +3,15 @@ import { useAuthContext } from './hooks/useAuthContext';
 import Menu from './pages/Menu';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Navbar from './components/Navbar';
+//import Navbar from './components/Navbar';
 import QR from './pages/QR';
 import Order from './pages/Order';
 import Sales from './pages/Customer';
 import EditForm from './pages/EditForm';
 import HomeLayout from './layouts/HomeLayout';
 import RootLayout from './layouts/RootLayout'
-import Sidebar from './components/SidebarA';
+import Test from './pages/Test';
+//import Template from './pages/Template';
 //import Sidebar from '../components/Sidebar';
 
 function App() {

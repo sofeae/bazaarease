@@ -34,8 +34,7 @@ const Menu = () => {
     <div className="menu-container">
       <div className="menu">
         <div className="menus">
-          {menus &&
-            menus.map((menu) => (
+          {menus && menus.map((menu) => (
               <MenuDetails key={menu._id} menu={menu} />
             ))}
         </div>

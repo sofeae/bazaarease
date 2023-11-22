@@ -57,6 +57,9 @@ const MenuDetails = ({ menu }) => {
     <div className="menus-details">
       <h4>{menu.name}</h4>
       <p>
+        <img src={'http://localhost:4000/' + menu.image} height="220" width="353" alt="Menu" />
+      </p>
+      <p>
         <strong>Description: </strong>
         {menu.desc}
       </p>
@@ -68,12 +71,10 @@ const MenuDetails = ({ menu }) => {
         <strong>Stock: </strong>
         {menu.stock}
       </p>
-      <p>
+      {/* <p>
         <strong>Image: </strong>
-      </p>
-      <p>
-        <img src={'http://localhost:4000/' + menu.image} height="100" width="150" alt="Menu" />
-      </p>
+      </p> */}
+      
       <p>{formatDistanceToNow(new Date(menu.createdAt), { addSuffix: true })}</p>
       <span>
         {/* Edit icon */}
