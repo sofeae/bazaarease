@@ -9,7 +9,6 @@ function Order() {
     <div>
       <Navbar />
       <Box sx={{ display: "flex" }}>
-        <Sidebar />
       </Box>
       
       <Box

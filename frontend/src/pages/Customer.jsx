@@ -33,7 +33,6 @@ const Menu = () => {
       <Navbar /> 
     <div className="menu-container">
       <div style={{ display: 'flex' }}>
-          <Sidebar />
       <div className="menu">
         
           {menus.map((menu) => (

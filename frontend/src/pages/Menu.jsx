@@ -30,11 +30,8 @@ const Menu = () => {
   }, [dispatch, user]);
 
   return (
-    
-    <div> 
-    <Navbar />
-      <div style={{ display: 'flex' }}>
-          <Sidebar />
+    <>
+    <div className="menu-container">
       <div className="menu">
         <div className="menus">
           {menus && menus.map((menu) => (
@@ -44,7 +41,7 @@ const Menu = () => {
         <MenuForm />
       </div>
     </div>
-    </div>
+    </>
   );
 };
 
