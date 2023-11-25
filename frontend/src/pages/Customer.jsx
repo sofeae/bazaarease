@@ -29,20 +29,20 @@ const Menu = () => {
   }, [dispatch, user]);
 
   return (
-    <div> 
+    <>
+    <div>
+    </div>
     <div className="menu-container">
-      <div style={{ display: 'flex' }}>
       <div className="menu">
-        
-          {menus.map((menu) => (
+        <div className="menus">
+          {menus && menus.map((menu) => (
               <CustMenuList key={menu._id} menu={menu} />
             ))}
-        
+        </div>
       </div>
     </div>
-    </div>
-    </div>
-  );
+    </>
+  );
 };
 
 export default Menu;

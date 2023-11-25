@@ -4,10 +4,12 @@ import Menu from './pages/Menu';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
+import CustNavbar from './components/CustNavbar';
 import QR from './pages/QR';
 import Order from './pages/Order';
 import Sales from './pages/Customer';
 import EditForm from './pages/EditForm';
+import Cart from './pages/Cart';
 import HomeLayout from './layouts/HomeLayout';
 import RootLayout from './layouts/RootLayout'
 import Test from './pages/Test';
@@ -20,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <CustNavbar />
         <Routes>
           <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />}></Route>
           <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />}></Route>
@@ -34,8 +36,12 @@ function App() {
             />
 
             <Route path="EditForm"
-              element={user ? <EditForm /> : <Navigate to="/login" />} />
+              element={user ? <EditForm /> : <Navigate to="/login" />} 
+            />
             <Route path="Customer"
+              element={user ? <Sales /> : <Navigate to="/login" />}
+            />
+            <Route path="Cart"
               element={user ? <Sales /> : <Navigate to="/login" />}
             />
           </Route>

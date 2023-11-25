@@ -17,9 +17,10 @@ export default function PermanentDrawerLeft() {
     { text: 'Menu', icon: <RestaurantIcon />, link: '/' },
     { text: 'Order', icon: <BorderColorIcon />, link: '/Order' },
     { text: 'QR Code', icon: <QrCodeIcon />, link: '/QR' },
-    { text: 'Sales Management', icon: <AttachMoneyIcon />, link: '/Customer' },
+    { text: 'Sales Management', icon: <AttachMoneyIcon />, link: '/Order' },
     { text: 'editForm', icon: <AttachMoneyIcon />, link: '/EditForm' },
     { text: 'test test', icon: <AttachMoneyIcon />, link: '/Test' },
+    { text: 'customer side', icon: <AttachMoneyIcon />, link: '/Customer' },
   ];
 const drawerWidth = 240;
 

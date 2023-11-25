@@ -13,7 +13,7 @@
 
 body {
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 html,
@@ -71,6 +71,14 @@ header a {
   flex: 1;
   padding-inline: 3rem;
   max-width: 700px;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.menus::-webkit-scrollbar {
+  display:none;
 }
 
 .menus-details {

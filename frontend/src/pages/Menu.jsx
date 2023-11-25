@@ -5,8 +5,6 @@ import { useAuthContext } from '../hooks/useAuthContext';
 // components
 import MenuDetails from '../components/MenuDetails';
 import MenuForm from '../components/MenuForm';
-import Sidebar from '../components/SidebarB';
-import Navbar from '../components/Navbar';
 
 const Menu = () => {
   const { menus, dispatch } = useMenusContext();
@@ -31,8 +29,6 @@ const Menu = () => {
 
   return (
     <>
-    <div>
-    </div>
     <div className="menu-container">
       <div className="menu">
         <div className="menus">

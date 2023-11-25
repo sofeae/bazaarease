@@ -31,7 +31,7 @@ const getMenu = async (req, res) => {
 const createMenu = async (req, res) => {
   console.log("Creating Menu")
   console.log(req.body)
-  const { name, desc, price, stock } = req.body
+  const { name, desc, price } = req.body
   const image = req.file.filename; 
 
   let emptyFields = []
@@ -45,9 +45,9 @@ const createMenu = async (req, res) => {
   if (!price) {
     emptyFields.push('price')
   }
-  if (!stock) {
-    emptyFields.push('stock')
-  }
+  // if (!stock) {
+  //   emptyFields.push('stock')
+  // }
   if (emptyFields.length > 0) {
     return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
   }
@@ -55,7 +55,7 @@ const createMenu = async (req, res) => {
   // add doc to db
   try {
     const user_id = req.user._id
-    const menu = await Menu.create({ name, desc, price, stock, image, user_id })
+    const menu = await Menu.create({ name, desc, price, image, user_id })
     res.status(200).json(menu)
   } catch (error) {
     res.status(400).json({ error: error.message })
