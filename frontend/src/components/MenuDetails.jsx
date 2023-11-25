@@ -2,6 +2,7 @@ import { useMenusContext } from '../hooks/useMenusContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Link } from 'react-router-dom'
 
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
@@ -51,6 +52,7 @@ const MenuDetails = ({ menu }) => {
   const iconStyle = {
     marginRight: '8px', // Adjust the spacing between the icon and text
     cursor: 'pointer', // Add a pointer cursor to indicate interactivity
+    color: 'black',
   };
 
   return (
@@ -78,7 +80,10 @@ const MenuDetails = ({ menu }) => {
       <p>{formatDistanceToNow(new Date(menu.createdAt), { addSuffix: true })}</p>
       <span>
         {/* Edit icon */}
-        <EditIcon style={iconStyle} onClick={handleEdit} />
+        {/* <EditIcon style={iconStyle} onClick={handleEdit} /> */}
+        <Link to="EditForm">
+          <EditIcon style={iconStyle}/>
+        </Link>
         {/* Delete icon */}
         <DeleteIcon style={iconStyle} onClick={handleDelete} />
       </span>

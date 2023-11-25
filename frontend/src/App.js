@@ -42,7 +42,7 @@ function App() {
               element={user ? <Sales /> : <Navigate to="/login" />}
             />
             <Route path="Cart"
-              element={user ? <Sales /> : <Navigate to="/login" />}
+              element={user ? <Cart /> : <Navigate to="/login" />}
             />
           </Route>
 
