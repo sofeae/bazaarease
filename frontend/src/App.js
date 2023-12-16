@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <CustNavbar />
+        <Navbar />
         <Routes>
           <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />}></Route>
           <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />}></Route>
