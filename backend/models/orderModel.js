@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const orderSchema = new Schema({
   orderId: {
-    type: String,
+    type: String, 
   },
   queueId: {
     type: Number
