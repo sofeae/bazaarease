@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors');
 const menuRoutes = require('./routes/menus')
 const userRoutes = require('./routes/user')
+const menu2Routes = require('./routes/menus2')
 // const customerRoutes = require('./routes/customer')
 // const multer = require ('multer')
 
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/menus', menuRoutes)
+app.use('/api/menus2', menu2Routes)
 app.use('/api/user', userRoutes)
 // app.use('/api/customer', customerRoutes)
 
